@@ -30,10 +30,10 @@ color colorDelBoton;
 color colorBordeBoton;
 //FLOAT
 float y;
-float x;
+float movimientoX;
 
 void setup() {
-  // TRABAJO CASI TERMINADO AGREGAR EFECTOS AL TEXTO Y CAMBIAR EL TEXTO DE LAS DIAPOSITIVAS
+
 
   size(640, 480);
 
@@ -41,12 +41,12 @@ void setup() {
   noCursor();
 
   y = -300;
-  x = -200;
+  movimientoX = -200;
 
   Texto1 = "Este es el tp1 sobre herramintas \n en este trabajo hablaremos de \n mazas y martillos ";
   Texto2 = "Aqui hay una foto \n de la primera Maza \n que fue creada \n se puede ver como \n fue diseniada";
   Texto3 = "Aca hay distintos tipos de\n mazas y martillos los cuales son \n para distintas profeciones \n  ";
-  Texto4 = "FIN de la presentacion \n del TP1 ";
+  Texto4 = "FIN de la presentacion \n del TP1 \n Gracias por ver  ";
 
   Fuente1 = loadFont("fuentes/SketchGothicSchool-48.vlw");
   Fuente2 = loadFont("fuentes/TypoDraftDemo-48.vlw");
@@ -55,7 +55,7 @@ void setup() {
 
   colorDetexto = 0;
   colorDetexto2 = 0;
-  colorDelBoton = 255;
+  colorDelBoton = 0;
   colorBordeBoton = 0;
 }
 
@@ -101,13 +101,13 @@ void draw() {
 
     fondoImagen1 = loadImage("imagenes/2.jpg");
     image(fondoImagen1, 0, 0, width - space, height - space);
-    x += 5;
-    if (x > 2)
-      x = 2;
+    movimientoX += 5;
+    if (movimientoX > 2)
+      movimientoX = 2;
     textFont(Fuente2);
     fill(#E88F3B);
     textSize(40);
-    text(Texto2, x, 40);
+    text(Texto2, movimientoX, 40);
 
 
 
@@ -184,6 +184,9 @@ void mouseMoved() {
 
 void mouseClicked() {
   if (botonRe == true) {
+    contador = 0;
     pantalla = 0;
-  }
+    y = 0;
+    movimientoX = -200;
+}
 }
