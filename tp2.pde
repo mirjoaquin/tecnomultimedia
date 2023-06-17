@@ -25,6 +25,7 @@ int posY;
 color pintar;
 
 int angulo;
+int tiempo;
 void setup(){
 size(800,400);
 
@@ -43,6 +44,7 @@ ancho = anchoDeModulo/cantidad;
 posX = width/cantidad* -4 ;
 posY = height/2;
 
+tiempo = 0;
 
 
 
@@ -197,5 +199,16 @@ pop();
     }
    }
  }
+}
+}
+
+
+void mouseClicked(){
+  if (tiempo>=1 && tiempo<= 420 )  {
+  posX = floor(map(mouseX, 400, 800, 0, 6));
+  posY = floor(map(mouseY, 0, height, 0, 15));
+  if (mouseX <400 && mouseX>100 ){
+    tiempo = 0 ; 
+  }
 }
 }
