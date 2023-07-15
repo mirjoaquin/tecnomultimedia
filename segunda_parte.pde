@@ -1,5 +1,12 @@
-void Botones(String forma, float x, float y, float tamaño, int siguiente, String MostrarTexto) {
-  push();
+void Botones(String forma, float x, float y, float tamaño, int siguiente, String MostrarTexto, color colorDeBoton) {
+push(); 
+ if (forma == "circ") {
+  fill(colorDeBoton);
+ } else if (forma == "cuad") {
+  fill(colorDeBoton);
+ }
+pop();
+  push();  
   if (forma == "circ") {
     circle(x, y, tamaño);
     text(MostrarTexto, x, y);
